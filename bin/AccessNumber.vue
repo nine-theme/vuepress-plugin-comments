@@ -1,14 +1,29 @@
 <template>
-  <span :id="getIdVal(idVal)" class="leancloud-visitors" :data-flag-title="flagTitle">
-    <a class="leancloud-visitors-count" :style="numStyle"></a>
+  <span
+    :id="getIdVal(idVal)"
+    class="leancloud-visitors"
+    :data-flag-title="flagTitle"
+  >
+    <a
+      class="leancloud-visitors-count"
+      :style="numStyle"
+    />
   </span>
 </template>
 
 <script>
 export default {
   props: {
-    idVal: String,
-    numStyle: Object,
+    idVal: {
+      type: String,
+      default: ''
+    },
+    numStyle: {
+      type: Object,
+      default() {
+        return {}
+      }
+    },
     flagTitle: {
       type: String,
       default: 'Your Article Title'

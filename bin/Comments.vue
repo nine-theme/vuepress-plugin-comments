@@ -1,11 +1,13 @@
 <template>
   <div
+    v-show="isShowComments"
     class="comments-wrapper"
-    v-show="isShowComments">
+  >
     <ClientOnly>
       <component
         :is="componentName"
-        :options="options" />
+        :options="options"
+      />
     </ClientOnly>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="valine-wrapper">
-    <div id="valine"></div>
+    <div id="valine" />
   </div>
 </template>
 
@@ -12,6 +12,17 @@ export default {
       type: Object,
       default () {
         return {}
+      }
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      if (to.path !== from.path) {
+        // 切换页面时刷新评论
+        // this.$router.go(0)
+        setTimeout(() => {
+          this.initValine()
+        }, 300)
       }
     }
   },
@@ -33,17 +44,6 @@ export default {
         ...this.options
       }
       new Valine(valineOptions)
-    }
-  },
-  watch: {
-    '$route' (to, from) {
-      if (to.path !== from.path) {
-        // 切换页面时刷新评论
-        // this.$router.go(0)
-        setTimeout(() => {
-          this.initValine()
-        }, 300)
-      }
     }
   }
 }

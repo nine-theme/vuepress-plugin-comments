@@ -1,7 +1,7 @@
 <template>
   <VssueComponent
-    class="vssue-wrapper"
     :key="key"
+    class="vssue-wrapper"
     :options="vssueOptions"
   />
 </template>
