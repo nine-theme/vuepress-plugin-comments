@@ -49,7 +49,7 @@ export default {
       if (to.path !== from.path) {
         // 切换页面时刷新评论
         setTimeout(() => {
-          this.key = `reco-${new Date().getTime()}`
+          this.key = `nine-${new Date().getTime()}`
         }, 300)
       }
     }

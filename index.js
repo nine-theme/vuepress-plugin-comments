@@ -6,7 +6,7 @@ module.exports = (options) => ({
       COMMENTS_OPTIONS: options || null
     }
   },
-  name: '@nines/vuepress-plugin-comments',
+  name: '@nine-theme/vuepress-plugin-comments',
   enhanceAppFiles: [
     path.resolve(__dirname, './bin/enhanceAppFile.js')
   ]
